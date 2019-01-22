@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>User Dict Generator</title>
+		<style type="text/css">
+			label {
+				border: 1px solid #ccc;
+				padding: 10px;
+				margin: 0 0 10px;
+				display: block; 
+			}
+			label:hover {
+				background: #eee;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<textarea id="text" cols="55" rows="7" placeholder="Input strings seperated with space.e.g.\nmeow\nneow\noeow" onkeyup="generateSurface()">meow&#13;&#10;neow&#13;&#10;oeow</textarea>
+		<div id="checkBox"></div>
+		<p id="choosenWords"></p>
+		<button onClick="copyToClipboard(choosenWords)">Copy</button>
+	</body>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+
+		// variables
+		let checkBox = document.getElementById("checkBox")
+		let textarea = document.getElementById("text")
+		let choosenWordsPara = document.getElementById("choosenWords")
+		let choosenWords = ''
+
+		// initialize
+		textarea.placeholder = textarea.placeholder.replace(/\\n/g, '\n')
+		generateSurface()
+
+		// functions
+		function generateSurface(){
+			let list = textarea.value.split('\n')
+			let $options = ''
+			for(let str of list){
+				if (str == '') continue
+				$options += `<label><input type="checkbox" value="${str}"/>${str}</label>`
+			}
+			checkBox.innerHTML = $options
+			$("input[type='checkbox']").change(showChoosenWords)
+			showChoosenWords()
+		}
+
+		function showChoosenWords() {
+			choosenWords = ''
+			$("input[type='checkbox']").each(function(index){
+				if (this.checked) choosenWords += this.value + '\n'
+			})
+			choosenWordsPara.innerHTML = choosenWords.replace(/\n/g, '<br>')
+			console.log(choosenWords)
+		}
+
+		function copyToClipboard(text) {
+			window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
+		}
+
+	</script>
+</html>
+
+
