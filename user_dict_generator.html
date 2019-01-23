@@ -55,7 +55,10 @@
 		function generateSurface(){
 			let list = [...new Set(textarea.value.split('\n'))]
 			let $options = ''
+			let cnt = 0
 			for(let str of list){
+				cnt++
+				if(cnt % 100 == 1) $options += cnt + '<br>' 
 				if (str == '') continue
 				$options += `<label><input type="checkbox" value="${str}"/><span>${str}</span></label>`
 			}
