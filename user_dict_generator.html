@@ -6,19 +6,26 @@
 			label {
 				border: 1px solid #ccc;
 				padding: 10px;
-				margin: 0 0 10px;
+				margin: 0 0 15px;
 				display: block; 
 			}
 			label:hover {
 				background: #eee;
 				cursor: pointer;
 			}
+			span {
+				margin: 10px;
+				padding: 5px;
+			}
 			#copyButton {
-				position: absolute;
-				bottom: 10%;
-				right: 10%;
+				position: fixed;
+				bottom: 5%;
+				right: 5%;
 				height: 10vh;
 				width: 10vh;
+			}
+			:checked + span {
+				background: #ccc;
 			}
 		</style>
 	</head>
@@ -46,11 +53,11 @@
 
 		// functions
 		function generateSurface(){
-			let list = textarea.value.split('\n')
+			let list = [...new Set(textarea.value.split('\n'))]
 			let $options = ''
 			for(let str of list){
 				if (str == '') continue
-				$options += `<label><input type="checkbox" value="${str}"/>${str}</label>`
+				$options += `<label><input type="checkbox" value="${str}"/><span>${str}</span></label>`
 			}
 			checkBox.innerHTML = $options
 			$("input[type='checkbox']").change(showChoosenWords)
@@ -72,5 +79,3 @@
 
 	</script>
 </html>
-
-
