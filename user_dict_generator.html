@@ -13,13 +13,23 @@
 				background: #eee;
 				cursor: pointer;
 			}
+			#copyButton {
+				position: absolute;
+				bottom: 10%;
+				right: 10%;
+				height: 10vh;
+				width: 10vh;
+			}
 		</style>
 	</head>
 	<body>
-		<textarea id="text" cols="55" rows="7" placeholder="Input strings seperated with space.e.g.\nmeow\nneow\noeow" onkeyup="generateSurface()">meow&#13;&#10;neow&#13;&#10;oeow</textarea>
+		<div>
+			<textarea id="text" cols="55" rows="7" placeholder="Input strings seperated with space.e.g.\nmeow\nneow\noeow">meow&#13;&#10;neow&#13;&#10;oeow</textarea>
+			<button onclick="generateSurface()">Enter</button>
+		</div>
 		<div id="checkBox"></div>
 		<p id="choosenWords"></p>
-		<button onClick="copyToClipboard(choosenWords)">Copy</button>
+		<button id="copyButton" onClick="copyToClipboard(choosenWords)">Copy</button>
 	</body>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script type="text/javascript">
