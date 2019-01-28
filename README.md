@@ -9,21 +9,20 @@ Download the repository
 ```bash
 $ git clone https://github.com/MiccWan/Political-News-Analysis.git
 ```
-## Packages
-- In crawler, we use **_requests_** and **_BeaufifulSoup4_**.
-- In text mining, we use **_pandas_**, **_jieba_**, **_sklearn_** and **_mlxtend_**.
-- In visualiztion, we use **_networkx_** and **_plotly_**.
-
 Since **__plotly__** is used in our project, you need to set your credentials to use the package:
-In bash,
 ```bash
 $ python
 ```
-then in python,
+then in python interactive shell,
 ```python
 import plotly 
 plotly.tools.set_credentials_file(username='<YOUR_ACCOUNT>', api_key='<YOUR_API_KEY>')
 ```
+
+## Packages
+- In crawler, we use **_requests_** and **_BeaufifulSoup4_**.
+- In text mining, we use **_pandas_**, **_jieba_**, **_sklearn_** and **_mlxtend_**.
+- In visualiztion, we use **_networkx_** and **_plotly_**.
 
 ## Dataset
 The dataset obtained by crawler is available at this [Google Drive Folder](https://drive.google.com/drive/folders/13BGgHTNmkkUvdOI8XgRiwBBpANPiRFmC?usp=sharing).
