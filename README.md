@@ -15,6 +15,11 @@ $ git clone https://github.com/MiccWan/Political-News-Analysis.git
 - In visualiztion, we use **_networkx_** and **_plotly_**.
 
 Since **__plotly__** is used in our project, you need to set your credentials to use the package:
+- In bash:
+```bash
+$ python
+```
+ - In python:
 ```python
 import plotly 
 plotly.tools.set_credentials_file(username='<YOUR_ACCOUNT>', api_key='<YOUR_API_KEY>')
