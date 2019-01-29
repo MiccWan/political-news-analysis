@@ -19,10 +19,10 @@ font = font_manager.FontProperties(fname='msjh.ttc',
                                    style='normal', size=16)
 
 
-# jieba.set_dictionary('jieba_data/dict.txt.big')
-# jieba.load_userdict('jieba_data/userdict.txt')
+# jieba.set_dictionary('../jieba_data/dict.txt.big')
+# jieba.load_userdict('../jieba_data/userdict.txt')
 stopwords = []
-with open('jieba_data/stopwords.txt', 'r', encoding='UTF-8') as file:
+with open('../jieba_data/stopwords.txt', 'r', encoding='UTF-8') as file:
     for each in file.readlines():
         stopwords.append(each.strip())
     stopwords.append(' ')
