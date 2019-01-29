@@ -26,3 +26,11 @@ plotly.tools.set_credentials_file(username='<YOUR_ACCOUNT>', api_key='<YOUR_API_
 
 ## Dataset
 The dataset obtained by crawler is available at this [Google Drive Folder](https://drive.google.com/drive/folders/13BGgHTNmkkUvdOI8XgRiwBBpANPiRFmC?usp=sharing).
+
+## Folders
+- **/crawler**: Crawlers for new_talk and liberty_times.
+- **/data**: Storing the list of events, people and reputation data for future analysis.
+- **/final_demo**: Report and data for final demo.
+- **/jieba_data**: Some dictionary for term frequency analysis.
+- **/politicians**: Images and wordcloud of politicians.
+- **/tools**: Some tools, modules and test file created in analysing.
