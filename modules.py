@@ -27,13 +27,19 @@ with open('jieba_data/stopwords.txt', 'r', encoding='UTF-8') as file:
         stopwords.append(each.strip())
     stopwords.append(' ')
 
-date_list = [news['date'] for news in data]
-all_date = sorted(list(set(date_list)))
-aall_date = [date[5:] for date in all_date][::-1]
-date_index = [date_list.index(each_date) for each_date in all_date]
-date_index.append(len(date_list)-1)
-number_of_news = [date_index[i+1] - date_index[i]-1 for i in range(len(date_index)-1)]
-number_of_terms = [sum([sum(data[ni]['cutted_dict'].values()) for ni in range(date_index[i], date_index[i+1])]) for i in range(len(date_index)-1)]
+# with open('crawler/data/new_talk.pkl', 'rb') as f:
+#     data = pickle.load(f)
+    
+# data = data[::-1]
+# contents = [news['content'] for news in data]
+
+# date_list = [news['date'] for news in data]
+# all_date = sorted(list(set(date_list)))
+# aall_date = [date[5:] for date in all_date][::-1]
+# date_index = [date_list.index(each_date) for each_date in all_date]
+# date_index.append(len(date_list)-1)
+# number_of_news = [date_index[i+1] - date_index[i]-1 for i in range(len(date_index)-1)]
+# number_of_terms = [sum([sum(data[ni]['cutted_dict'].values()) for ni in range(date_index[i], date_index[i+1])]) for i in range(len(date_index)-1)]
 
 
 def remove_punctuation(content_string, user_pc=False):
@@ -185,7 +191,7 @@ def keyword_with_event(keyword):
     key_term = first_n_words(key_dict, 300)
     return list(filter(lambda x: x in hot4, [x[0] for x in key_term]))
 
-def draw_event(event, i, df_tf, df_occur):
+def draw_event(event, i, df_tf, df_occur, all_date):
     event_date = get_high_tfdf_date(event, df_tf, df_occur)
     date_index = [all_date.index(x) for x in event_date.keys()]
     plt.scatter(date_index, [i for x in date_index], s=[x*100000 for x in list(event_date.values())])
