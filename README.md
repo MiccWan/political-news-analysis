@@ -15,8 +15,8 @@ $ python
 ```
 then in python interactive shell,
 ```python
-import plotly 
-plotly.tools.set_credentials_file(username='<YOUR_ACCOUNT>', api_key='<YOUR_API_KEY>')
+>> import plotly 
+>> plotly.tools.set_credentials_file(username='<YOUR_ACCOUNT>', api_key='<YOUR_API_KEY>')
 ```
 
 ## Packages
