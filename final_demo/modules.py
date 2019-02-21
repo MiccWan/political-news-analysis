@@ -13,8 +13,8 @@ from collections import Counter
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 from PIL import Image
 
-font_path = 'msjh.ttc'
-font = font_manager.FontProperties(fname='msjh.ttc',
+font_path = '../msjh.ttc'
+font = font_manager.FontProperties(fname='../msjh.ttc',
                                    weight='bold',
                                    style='normal', size=16)
 
